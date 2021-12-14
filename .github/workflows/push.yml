@@ -1,0 +1,18 @@
+name: Push
+
+on: push
+
+jobs:
+  push-event:
+    runs-on: ubuntu-latest
+    name: Record push event
+    steps:
+      - name: Test deployment marker
+        uses: AlecIsaacson/deployment-marker-action
+        with:
+          apiKey: ${{ secrets.NEW_RELIC_API_KEY }}
+          accountId: ${{ secrets.NEW_RELIC_ACCOUNT_ID }}
+          repository: ${{ gihub.repository }}
+          commitSHA: ${{ github.sha }}
+          branch: ${{ github.ref }}
+          
