@@ -12,7 +12,5 @@ jobs:
         with:
           apiKey: ${{ secrets.NEW_RELIC_API_KEY }}
           accountId: ${{ secrets.NEW_RELIC_ACCOUNT_ID }}
-          repository: ${{ gihub.repository }}
-          commitSHA: ${{ github.sha }}
-          branch: ${{ github.ref }}
+          
           
