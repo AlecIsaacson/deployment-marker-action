@@ -7,6 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Record push event
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
       - name: Test deployment marker
         uses: ./
         with:
