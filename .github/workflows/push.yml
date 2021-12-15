@@ -1,4 +1,4 @@
-name: Push
+name: Create push event
 
 on: push
 
@@ -8,7 +8,7 @@ jobs:
     name: Record push event
     steps:
       - name: Test deployment marker
-        uses: AlecIsaacson/deployment-marker-action
+        uses: ./
         with:
           apiKey: ${{ secrets.NEW_RELIC_API_KEY }}
           accountId: ${{ secrets.NEW_RELIC_ACCOUNT_ID }}
