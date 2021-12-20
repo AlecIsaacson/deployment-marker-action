@@ -5,12 +5,12 @@ on: push
 jobs:
   push-event:
     runs-on: ubuntu-latest
-    name: Record push event
+    name: NR push event job
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         
-      - name: Test deployment marker
+      - name: Post push event
         uses: ./
         with:
           apiKey: ${{ secrets.NEW_RELIC_API_KEY }}
