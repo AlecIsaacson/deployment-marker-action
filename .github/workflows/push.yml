@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         
-      - name: Post push event
+      - name: Send push event
         uses: ./
         with:
           apiKey: ${{ secrets.NEW_RELIC_API_KEY }}

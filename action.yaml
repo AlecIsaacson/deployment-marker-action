@@ -17,6 +17,9 @@ inputs:
   applicationId:
     description: 'The application ID to apply the deployment marker.'
     required: true
+  repository:
+    description: 'Custom revision information to add to the deployment marker - e.g. the latest tag.'
+    required: true
   region:
     description: 'The geographical region for your New Relic account - US or EU. Default: US'
     required: false
