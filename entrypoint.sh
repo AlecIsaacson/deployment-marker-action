@@ -5,7 +5,7 @@ nrEventType=pushEvent
 eventJSON=$(jq -n \
                --arg eventType "$nrEventType" \
                --arg user "${NEW_RELIC_DEPLOYMENT_USER}" \
-               --arg revision "${NEW_RELIC_DEPLOYMENT_REVISION}" \
+               --arg repository "${NEW_RELIC_DEPLOYMENT_REPOSITORY}" \
                --arg path "${PATH}" \
                '{eventType: $eventType, user: $user, revision: $revision, path: $path}' )
 
