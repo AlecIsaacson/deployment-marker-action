@@ -7,7 +7,7 @@ eventJSON=$(jq -n \
                --arg user "${NEW_RELIC_DEPLOYMENT_USER}" \
                --arg repository "${NEW_RELIC_DEPLOYMENT_REPOSITORY}" \
                --arg path "${PATH}" \
-               '{eventType: $eventType, user: $user, revision: $revision, path: $path}' )
+               '{eventType: $eventType, user: $user, repository: $repository, path: $path}' )
 
 echo $eventJSON
 
