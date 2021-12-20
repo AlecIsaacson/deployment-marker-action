@@ -9,7 +9,7 @@ eventJSON=$(jq -n \
                --arg commitHash "${GITHUB_SHA}" \
                --arg repoOwner "${GITHUB_REPOSITORY_OWNER}" \
                --arg branch "${GITHUB_REF}" \
-               '{eventType: $eventType, user: $user, repository: $repository, commitHash: $githubSHA, repoOwner: $repoOwner, branch: $branch}' )
+               '{eventType: $eventType, user: $user, repository: $repository, commitHash: $commitHash, repoOwner: $repoOwner, branch: $branch}' )
 
 echo $eventJSON
 
