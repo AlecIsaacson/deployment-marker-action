@@ -27,9 +27,11 @@ inputs:
   description:
     description: 'Description stored with the deployment. Default: <none>'
     required: false
+    default: 'default description'
   changelog:
     description: 'Change log string stored with the deployment. Default: <none>'
     required: false
+    default: 'default changelog'
   user:
     description: 'The user creating the deployment. Default: `github.actor`'
     required: false
