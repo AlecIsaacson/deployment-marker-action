@@ -16,6 +16,5 @@ jobs:
           apiKey: ${{ secrets.NEW_RELIC_API_KEY }}
           accountId: ${{ secrets.NEW_RELIC_ACCOUNT_ID }}
           insertKey: ${{ secrets.NEW_RELIC_INSIGHTS_INSERT_KEY }}
-          changelog: ${{ github.event.commits.message}}
           
           

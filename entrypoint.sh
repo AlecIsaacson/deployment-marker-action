@@ -9,9 +9,9 @@ eventJSON=$(jq -n \
                --arg commitHash "${GITHUB_SHA}" \
                --arg repoOwner "${GITHUB_REPOSITORY_OWNER}" \
                --arg branch "${GITHUB_REF_NAME}" \
-               --arg changeLog "${NEW_RELIC_DEPLOYMENT_CHANGE_LOG}" \
+               --arg changelog "${NEW_RELIC_DEPLOYMENT_CHANGE_LOG}" \
                --arg description "${NEW_RELIC_DEPLOYMENT_DESCRIPTION}" \
-               '{eventType: $eventType, user: $user, repository: $repository, commitHash: $commitHash, repoOwner: $repoOwner, branch: $branch, changeLog: $changeLog, description: $description}' )
+               '{eventType: $eventType, user: $user, repository: $repository, commitHash: $commitHash, repoOwner: $repoOwner, branch: $branch, changelog: $changelog, description: $description}' )
 
 echo $eventJSON
 
