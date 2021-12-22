@@ -10,6 +10,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         
+      - name: dump context
+        env: 
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CONTEXT"
+        
       - name: Send push event
         uses: ./
         with:
