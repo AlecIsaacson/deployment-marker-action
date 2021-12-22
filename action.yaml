@@ -24,14 +24,9 @@ inputs:
     description: 'The geographical region for your New Relic account - US or EU. Default: US'
     required: false
     default: US
-  description:
+  commitMessage:
     description: 'Description stored with the deployment. Default: <none>'
     required: false
-    default: 'default description'
-  changelog:
-    description: 'Change log string stored with the deployment. Default: <none>'
-    required: false
-    default: 'default changelog'
   user:
     description: 'The user creating the deployment. Default: `github.actor`'
     required: false
@@ -47,5 +42,4 @@ runs:
     NEW_RELIC_REGION: ${{ inputs.region }}
     NEW_RELIC_DEPLOYMENT_USER: ${{ inputs.user }}
     NEW_RELIC_DEPLOYMENT_REVISION: ${{ inputs.revision }}
-    NEW_RELIC_DEPLOYMENT_CHANGE_LOG: ${{ inputs.changelog }}
-    NEW_RELIC_DEPLOYMENT_DESCRIPTION: ${{ inputs.description }}
+    NEW_RELIC_DEPLOYMENT_DESCRIPTION: ${{ inputs.commitMessage }}
