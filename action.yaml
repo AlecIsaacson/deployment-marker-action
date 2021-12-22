@@ -27,7 +27,6 @@ inputs:
   description:
     description: 'Description stored with the deployment. Default: <none>'
     required: false
-    default: '${{ github.}}'
   changelog:
     description: 'Change log string stored with the deployment. Default: <none>'
     required: false
