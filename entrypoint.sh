@@ -15,6 +15,8 @@ eventJSON=$(jq -n \
 
 echo $eventJSON
 
+set
+
 result=$(newrelic events post \
   --event "$eventJSON" \
   2>&1)
