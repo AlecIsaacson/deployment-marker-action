@@ -14,7 +14,7 @@ eventJSON=$(jq -n \
                --arg pushedEmail "${NEW_RELIC_PUSH_EMAIL}" \
                --arg pushedTimestamp "${NEW_RELIC_PUSH_TIMESTAMP}" \
                --arg repoURL "${NEW_RELIC_REPO_URL}" \
-               '{eventType: $eventType, repository: $repository, commitHash: $commitHash, repoOwner: $repoOwner, branch: $branch, changelog: $changelog, description: $description, pushedBy: $pushedBy, pushEmail: $pushedEmail, repoURL: $repoURL, pushedTimestamp: $pushedTimestamp}' )
+               '{eventType: $eventType, repository: $repository, commitHash: $commitHash, repoOwner: $repoOwner, branch: $branch, description: $description, pushedBy: $pushedBy, pushEmail: $pushedEmail, repoURL: $repoURL, pushedTimestamp: $pushedTimestamp}' )
 
 echo $eventJSON
 
