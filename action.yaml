@@ -28,9 +28,14 @@ inputs:
     description: 'Description stored with the deployment. Default: <none>'
     required: false
   user:
-    description: 'The user creating the deployment. Default: `github.actor`'
+    description: 'The user who pushed the commit to the repo'
     required: false
-    default: '${{ github.actor }}'
+  email:
+    description: 'The email of the user who pushed the commit to the repo'
+    required: false
+  commitTimestamp:
+    description: 'The time the commit occurred'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
