@@ -35,11 +35,9 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   env:
-    NEW_RELIC_API_KEY: ${{ inputs.apiKey }}
     NEW_RELIC_INSIGHTS_INSERT_KEY: ${{ inputs.insertKey }}
     NEW_RELIC_ACCOUNT_ID: ${{ inputs.accountId }}
-    NEW_RELIC_APPLICATION_ID: ${{ inputs.applicationId }}
-    NEW_RELIC_REGION: ${{ inputs.region }}
-    NEW_RELIC_DEPLOYMENT_USER: ${{ inputs.user }}
     NEW_RELIC_DEPLOYMENT_REVISION: ${{ inputs.revision }}
     NEW_RELIC_DEPLOYMENT_DESCRIPTION: ${{ inputs.commitMessage }}
+    NEW_RELIC_PUSH_USER: ${{ inputs.user }}
+    NEW_RELIC_PUSH_EMAIL: ${{ inputs.email }}
