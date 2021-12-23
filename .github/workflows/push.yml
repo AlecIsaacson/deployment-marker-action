@@ -25,5 +25,6 @@ jobs:
           commitTimestamp: ${{ github.event.repository.pushed_at }}
           user: ${{ github.event.pusher.name }}
           email: ${{ github.event.pusher.email }}
+          repoURL: ${{ github.repositoryUrl }}
           
           
