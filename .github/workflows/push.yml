@@ -22,7 +22,7 @@ jobs:
           accountId: ${{ secrets.NEW_RELIC_ACCOUNT_ID }}
           insertKey: ${{ secrets.NEW_RELIC_INSIGHTS_INSERT_KEY }}
           commitMessage: ${{ github.event.head_commit.message }}
-          commitTimestamp: ${{ github.repository.pushed_at}}
+          commitTimestamp: ${{ github.run_id}}
           user: ${{ github.event.pusher.name }}
           email: ${{ github.event.pusher.email }}
           
