@@ -4,7 +4,6 @@ nrEventType=pushEvent
 
 eventJSON=$(jq -n \
                --arg eventType "$nrEventType" \
-               --arg user "${NEW_RELIC_DEPLOYMENT_USER}" \
                --arg repository "${GITHUB_REPOSITORY}" \
                --arg commitHash "${GITHUB_SHA}" \
                --arg repoOwner "${GITHUB_REPOSITORY_OWNER}" \
@@ -13,7 +12,9 @@ eventJSON=$(jq -n \
                --arg description "${NEW_RELIC_DEPLOYMENT_DESCRIPTION}" \
                --arg pushedBy "${NEW_RELIC_PUSH_USER}" \
                --arg pushedEmail "${NEW_RELIC_PUSH_EMAIL}" \
-               '{eventType: $eventType, user: $user, repository: $repository, commitHash: $commitHash, repoOwner: $repoOwner, branch: $branch, changelog: $changelog, description: $description, pushedBy: $pushedBy, pushEmail: $pushedEmail}' )
+               --arg pushedTimestamp "${NEW_RELIC_PUSH_TIMESTAMP}" \
+               --arg repoURL "${NEW_RELIC_REPO_URL}" \
+               '{eventType: $eventType, repository: $repository, commitHash: $commitHash, repoOwner: $repoOwner, branch: $branch, changelog: $changelog, description: $description, pushedBy: $pushedBy, pushEmail: $pushedEmail, repoURL: $repoURL, pushedTimestamp: $pushedTimestamp}' )
 
 echo $eventJSON
 

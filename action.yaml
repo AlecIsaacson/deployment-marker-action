@@ -36,6 +36,9 @@ inputs:
   commitTimestamp:
     description: 'The time the commit occurred'
     required: false
+  repoURL:
+    description: 'The URL of the repo'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -46,3 +49,5 @@ runs:
     NEW_RELIC_DEPLOYMENT_DESCRIPTION: ${{ inputs.commitMessage }}
     NEW_RELIC_PUSH_USER: ${{ inputs.user }}
     NEW_RELIC_PUSH_EMAIL: ${{ inputs.email }}
+    NEW_RELIC_PUSH_TIMESTAMP: ${{ inputs.commitTimestamp }}
+    NEW_RELIC_REPO_URL: ${{ inputs.repoURL }}
