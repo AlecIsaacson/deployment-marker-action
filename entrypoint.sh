@@ -16,7 +16,7 @@ eventJSON=$(jq -n \
                --arg repoURL "${NEW_RELIC_REPO_URL}" \
                '{eventType: $eventType, repository: $repository, commitHash: $commitHash, repoOwner: $repoOwner, branch: $branch, description: $description, pushedBy: $pushedBy, pushEmail: $pushedEmail, repoURL: $repoURL, pushedTimestamp: $pushedTimestamp}' )
 
-git log --oneline --name-status -1 $NEW_RELIC_PREVIOUS_SHA..$NEW_RELIC_CURRENT_SHA
+git log --oneline --name-status 
 
 changes=$(git log --oneline --name-status -1 $NEW_RELIC_PREVIOUS_SHA..$NEW_RELIC_CURRENT_SHA | tail -n +2 | awk -f /getChanges.awk)
 
