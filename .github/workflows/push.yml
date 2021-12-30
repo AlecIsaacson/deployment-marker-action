@@ -26,5 +26,7 @@ jobs:
           user: ${{ github.event.pusher.name }}
           email: ${{ github.event.pusher.email }}
           repoURL: ${{ github.repositoryUrl }}
+          currentCommitSHA: ${{ github.event.after }}
+          previousCommitSHA: ${{ github.event.before }}
           
           

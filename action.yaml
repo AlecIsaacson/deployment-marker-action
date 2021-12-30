@@ -39,6 +39,12 @@ inputs:
   repoURL:
     description: 'The URL of the repo'
     required: false
+  currentCommitSHA:
+    description: 'Hash of this commit'
+    required: false
+  previousCommitSHA:
+    description: 'Hash of prior commit'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -51,3 +57,5 @@ runs:
     NEW_RELIC_PUSH_EMAIL: ${{ inputs.email }}
     NEW_RELIC_PUSH_TIMESTAMP: ${{ inputs.commitTimestamp }}
     NEW_RELIC_REPO_URL: ${{ inputs.repoURL }}
+    NEW_RELIC_CURRENT_SHA: ${{ inputs.currentCommitSHA }}
+    NEW_RELIC_PREVIOUS_SHA: ${{ inputs.previousCommitSHA }}

@@ -16,13 +16,11 @@ eventJSON=$(jq -n \
                --arg repoURL "${NEW_RELIC_REPO_URL}" \
                '{eventType: $eventType, repository: $repository, commitHash: $commitHash, repoOwner: $repoOwner, branch: $branch, description: $description, pushedBy: $pushedBy, pushEmail: $pushedEmail, repoURL: $repoURL, pushedTimestamp: $pushedTimestamp}' )
 
-echo $eventJSON
-
 git log --oneline --name-status -1
 
 changes=$(git log --oneline --name-status -1 | tail -n +2 | awk -f /getChanges.awk)
 
-echo $changes
+set 
 
 result=$(newrelic events post \
   --event "$eventJSON" \
