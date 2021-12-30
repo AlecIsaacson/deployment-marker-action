@@ -18,6 +18,8 @@ eventJSON=$(jq -n \
 
 echo $eventJSON
 
+git log --oneline --name-status -1
+
 changes=$(git log --oneline --name-status -1 | tail -n +2 | awk -f /getChanges.awk)
 
 echo $changes
