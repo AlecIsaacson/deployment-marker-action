@@ -18,7 +18,9 @@ eventJSON=$(jq -n \
 
 echo $eventJSON
 
-set
+changes=$(git log --oneline --name-status -1)
+
+echo $changes
 
 result=$(newrelic events post \
   --event "$eventJSON" \
