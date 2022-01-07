@@ -14,4 +14,7 @@ BEGIN {
 }
 END {
   print added, modified, deleted
+  export filesAdded=added 
+  export filesModified=modified
+  export filesDeleted=deleted
 }
