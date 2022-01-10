@@ -40,8 +40,8 @@ eventJSON=$(jq -n \
                --arg filesDeleted "${NEW_RELIC_FILES_DELETED}" \
                '{eventType: $eventType, repository: $repository, commitHash: $commitHash, repoOwner: $repoOwner, branch: $branch, 
                  description: $description, pushedBy: $pushedBy, pushEmail: $pushedEmail, repoURL: $repoURL, pushedTimestamp: $pushedTimestamp,
-                 currentSHA: $NEW_RELIC_CURRENT_SHA, previousSHA: $NEW_RELIC_PREVIOUS_SHA, filesAdded: $NEW_RELIC_FILES_ADDED, 
-                 filesModified: $NEW_RELIC_FILES_MODIFIED, filesDeleted: $NEW_RELIC_FILES_DELETED}' )
+                 currentSHA: $currentSHA, previousSHA: $previousSHA, filesAdded: $filesAdded, 
+                 filesModified: $filesModified, filesDeleted: $filesDeleted}' )
 
 result=$(newrelic events post \
   --event "$eventJSON" \
